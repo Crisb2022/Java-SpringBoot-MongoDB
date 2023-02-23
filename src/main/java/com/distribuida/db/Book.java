@@ -6,11 +6,13 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collation = "Book")
-public class Book {
+@Document(collection = "Book") // Es como entity en JPA
+public class Book implements Serializable {
     @Id
     private Integer id;
     private String isbn;
